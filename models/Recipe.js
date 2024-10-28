@@ -26,12 +26,6 @@ const recipeSchema = new mongoose.Schema({
             true, "Please enter recipe description and steps"
         ]
     },
-    // recipeCategory: {
-    //     type: String,
-    //     required: [
-    //         true, "Please enter recipe category"
-    //     ]
-    // },
     recipeTime: {
         type: Number,
         required: [
@@ -59,6 +53,7 @@ const recipeSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+    //TODO: add updated on field
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
