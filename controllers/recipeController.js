@@ -158,16 +158,10 @@ exports.getAllUsers = async (req, res) => {
                 });
             }
             else {
-                console.log('inside else');
                 userId = decodedToken.user.id;
             }
         });
         const users = await User.find();
-        console.log(users);
-        const loggedInUser = await User.getUserDetailsFromUserId(userId);
-        console.log(loggedInUser);
-        const usersTest= await User.find(x => x.username !== loggedInUser.username);
-        console.log(usersTest);
         res.status(200).json(users);
     }
     catch (error) {
